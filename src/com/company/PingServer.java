@@ -47,7 +47,7 @@ public class PingServer
 
             // If rand is less than 4, we consider that packet lost and do not reply
             if (rand < 4) {
-                System.out.println("Reply not sent");
+                System.out.println("\nReply not sent\n");
                 continue;
             }
 
@@ -55,7 +55,7 @@ public class PingServer
             byte[] sendData = capitalizedSentence.getBytes();
             DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, client_port);
             serverSocket.send(sendPacket);
-            System.out.println("\nReply to the client sent");
+            System.out.println("\nReply to the client sent was: " + capitalizedSentence + "\n");
 
 
 
